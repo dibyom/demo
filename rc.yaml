@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+        - name: demo
+          image: dibyom/demo:latest
+          ports:
+          - name: runtimeport
+            containerPort: 9000
